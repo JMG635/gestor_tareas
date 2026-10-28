@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Panel de control</p>
+          <h1>Gestor de tareas</h1>
+        </div>
+      </header>
+
+      <main class="app-layout">
+        <section class="panel form-panel">
+          <h2>Registrar actividad</h2>
+
+          <form id="taskForm">
+            <div class="field">
+              <label for="taskName">Nombre</label>
+              <input id="taskName" name="taskName" type="text" maxlength="60" placeholder="Ej. Revisar inventario" required />
+            </div>
+
+            <div class="field">
+              <label for="taskDescription">Descripción</label>
+              <textarea id="taskDescription" name="taskDescription" rows="4" maxlength="220" placeholder="Describe brevemente la actividad" required></textarea>
+            </div>
+
+            <div class="field">
+              <label for="taskStatus">Estado</label>
+              <select id="taskStatus" name="taskStatus">
+                <option value="Pendiente">Pendiente</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Completada">Completada</option>
+              </select>
+            </div>
+
+            <div class="buttons">
+              <button type="submit" id="saveTaskBtn" class="primary-btn">Guardar actividad</button>
+              <button type="button" id="updateTaskBtn" class="secondary-btn hidden">Actualizar</button>
+              <button type="button" id="resetFormBtn" class="ghost-btn">Limpiar</button>
+            </div>
+          </form>
+
+          <div class="file-actions">
+            <button type="button" id="exportBtn" class="accent-btn">Guardar en .txt</button>
+            <label class="upload-btn" for="importFile">
+              <span>Cargar .txt</span>
+              <input id="importFile" type="file" accept=".txt" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="list-header">
+            <h2>Actividades registradas</h2>
+            <span id="taskCount" class="count-badge">0</span>
+          </div>
+          <div id="taskList" class="task-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

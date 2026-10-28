@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Reunión de equipo",
+    "description": "Coordinar la agenda del proyecto y revisar avances semanales.",
+    "status": "Pendiente"
+  },
+  {
+    "id": 2,
+    "name": "Actualización del inventario",
+    "description": "Verificar productos faltantes y registrar nuevas entradas.",
+    "status": "En proceso"
+  }
+]
